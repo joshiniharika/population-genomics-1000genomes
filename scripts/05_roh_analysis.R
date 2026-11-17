@@ -46,7 +46,7 @@ cat("[1/4] Detecting ROH with PLINK...\n")
 
 plink_cmd <- sprintf(
   paste(
-    "plink --bfile %s/chr%s_pruned",
+    "plink --bfile %s/chr%s_qc",
     "--homozyg",
     "--homozyg-window-snp 50",
     "--homozyg-snp 50",

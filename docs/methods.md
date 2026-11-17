@@ -40,5 +40,5 @@ Similarly, **ancIBD** (Ringbauer et al., 2024) extends IBD segment detection to 
 - Auton A et al. (2015). A global reference for human genetic variation. *Nature* 526, 68–74.
 - Alexander DH et al. (2009). Fast model-based estimation of ancestry in unrelated individuals. *Genome Research* 19, 1655–1664.
 - Purcell S et al. (2007). PLINK: a toolset for whole-genome association and population-based linkage analyses. *AJHG* 81, 559–575.
-- Ringbauer H et al. (2021). Insights into human genetic diversity using ancient DNA. *bioRxiv*.
+- Ringbauer H, Novembre J, Steinrücken M (2021). Parental relatedness through time revealed by runs of homozygosity in ancient DNA. Nature Communications.
 - Ringbauer H et al. (2024). Accurate detection of identity-by-descent segments in human ancient DNA. *Nature Genetics* 56, 143–151.
