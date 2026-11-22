@@ -49,12 +49,14 @@ echo "[3/3] Converting VCF to PLINK binary format (BED/BIM/FAM)..."
 
 plink \
     --vcf "$DATA_DIR/$VCF_FILE" \
-    --make-bed \
-    --out "$PLINK_DIR/chr${CHR}_raw" \
     --double-id \
     --allow-extra-chr \
-    --set-missing-var-ids @:#\$1,\$2 \
-    --vcf-half-call m
+    --vcf-half-call m \
+    --biallelic-only strict \
+    --snps-only just-acgt \
+    --set-missing-var-ids @:#:\$1:\$2 \
+    --make-bed \
+    --out "$PLINK_DIR/chr${CHR}_raw"
 
 echo ""
 echo "============================================"
