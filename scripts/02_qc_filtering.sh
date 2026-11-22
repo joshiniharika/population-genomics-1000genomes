@@ -19,7 +19,7 @@ MAF=0.05          # Minor allele frequency threshold
 GENO=0.05         # Maximum per-SNP missingness
 MIND=0.10         # Maximum per-individual missingness
 HWE=0.000001      # Hardy-Weinberg equilibrium p-value threshold
-LD_WIN=50         # LD pruning window size (kb)
+LD_WIN=50         # LD pruning window size (SNPs)
 LD_STEP=10        # LD pruning step size
 LD_R2=0.2         # LD pruning r² threshold
 
@@ -38,7 +38,6 @@ plink \
     --maf $MAF \
     --geno $GENO \
     --mind $MIND \
-    --hwe $HWE \
     --make-bed \
     --out "$QC_DIR/chr${CHR}_qc" \
     --allow-extra-chr
