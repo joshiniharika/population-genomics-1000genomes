@@ -1,5 +1,5 @@
 # =============================================================================
-# Script 03: PCA â Principal Component Analysis
+# Script 03: PCA - Principal Component Analysis
 # Author: Niharika Joshi
 # Description: Runs PCA using PLINK output and produces publication-quality
 #              plots coloured by population and superpopulation.
@@ -33,7 +33,7 @@ plink_cmd <- sprintf(
   QC_DIR, CHR, QC_DIR, CHR
 )
 system(plink_cmd)
-cat("  â PCA complete\n")
+cat("  PCA complete\n")
 
 # =============================================================================
 # Step 2: Load PCA results and population labels
@@ -80,7 +80,7 @@ superpop_colours <- c(
 )
 
 # =============================================================================
-# Step 4: Plot PCA â coloured by superpopulation
+# Step 4: Plot PCA coloured by superpopulation
 # =============================================================================
 cat("[3/4] Generating PCA plots...\n")
 
@@ -92,9 +92,9 @@ p1 <- ggplot(pca_data, aes(x = PC1, y = PC2, colour = super_pop)) +
   ) +
   labs(
     title = "Global Human Population Structure",
-    subtitle = "1000 Genomes Phase 3 â 2,504 individuals, 26 populations",
-    x = sprintf("PC1 (%.2f%% variance)", pct_var[1]),
-    y = sprintf("PC2 (%.2f%% variance)", pct_var[2]),
+    subtitle = "1000 Genomes Phase 3, chromosome 22 only: 2,504 individuals, 26 populations",
+    x = sprintf("PC1 (%.2f%% of top-10 PC variance)", pct_var[1]),
+    y = sprintf("PC2 (%.2f%% of top-10 PC variance)", pct_var[2]),
     caption = "Analysis: PLINK 1.9 | Visualisation: R/ggplot2 | Author: Niharika Joshi"
   ) +
   theme_classic(base_size = 12) +
@@ -112,8 +112,8 @@ p2 <- ggplot(pca_data, aes(x = PC3, y = PC4, colour = super_pop)) +
   scale_colour_manual(values = superpop_colours, name = "Superpopulation") +
   labs(
     title = "PC3 vs PC4",
-    x = sprintf("PC3 (%.2f%% variance)", pct_var[3]),
-    y = sprintf("PC4 (%.2f%% variance)", pct_var[4])
+    x = sprintf("PC3 (%.2f%% of top-10 PC variance)", pct_var[3]),
+    y = sprintf("PC4 (%.2f%% of top-10 PC variance)", pct_var[4])
   ) +
   theme_classic(base_size = 11) +
   theme(legend.position = "none")
@@ -125,7 +125,7 @@ p3 <- ggplot(scree_data, aes(x = PC, y = pct_var)) +
   geom_line(colour = "grey40") +
   geom_point(size = 2, colour = "grey40") +
   scale_x_continuous(breaks = 1:10) +
-  labs(title = "Variance Explained", x = "Principal Component", y = "% Variance") +
+  labs(title = "Variance Among Top 10 PCs", x = "Principal Component", y = "% of top-10 PC variance") +
   theme_classic(base_size = 11)
 
 # Combined figure
@@ -142,7 +142,7 @@ ggsave(
   width = 12, height = 10, dpi = 300, bg = "white"
 )
 
-cat("  â PCA plot saved: results/figures/01_pca_analysis.png\n")
+cat("  PCA plot saved: results/figures/01_pca_analysis.png\n")
 
 # =============================================================================
 # Step 5: Save PCA data for downstream use
@@ -152,7 +152,7 @@ write.csv(pca_data, file.path(QC_DIR, "pca_results_with_populations.csv"), row.n
 
 cat("\n============================================\n")
 cat("  PCA complete. Output:\n")
-cat("  â results/figures/01_pca_analysis.png\n")
-cat("  â data/qc/pca_results_with_populations.csv\n")
+cat("  results/figures/01_pca_analysis.png\n")
+cat("  data/qc/pca_results_with_populations.csv\n")
 cat("  Next: bash scripts/04_admixture.sh\n")
 cat("============================================\n")
