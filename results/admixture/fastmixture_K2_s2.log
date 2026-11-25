@@ -1,0 +1,81 @@
+-------------------------------------------------
+fastmixture v1.3.0
+C.G. Santander, A. Refoyo-Martinez and J. Meisner
+K=2, seed=2, batches=32, threads=4
+-------------------------------------------------
+
+Reading data...Loaded 2504 samples and 8317 SNPs.
+
+WARNING: Few SNPs per mini-batch!
+
+SVD/ALS initialization.SVD/ALS initialization.		(0.6s)
+Initial log-like: -18504045.3
+Performed priming iteration.	(0.2s)
+
+Estimating Q and P using mini-batch EM.
+Using 32 mini-batches.
+(5)	Log-like: -18473599.7	(1.4s)
+(10)	Log-like: -18473535.5	(1.2s)
+(15)	Log-like: -18473960.8	(1.2s)
+Halving mini-batches to 16.
+(20)	Log-like: -18471686.1	(1.3s)
+(25)	Log-like: -18471428.3	(1.2s)
+(30)	Log-like: -18471586.8	(1.2s)
+Halving mini-batches to 8.
+(35)	Log-like: -18470552.6	(1.2s)
+(40)	Log-like: -18470519.8	(1.3s)
+(45)	Log-like: -18470430.2	(1.2s)
+(50)	Log-like: -18470399.4	(1.3s)
+(55)	Log-like: -18470483.3	(1.2s)
+Halving mini-batches to 4.
+(60)	Log-like: -18470167.6	(1.2s)
+(65)	Log-like: -18470152.9	(1.2s)
+(70)	Log-like: -18470134.1	(1.3s)
+(75)	Log-like: -18470126.8	(1.2s)
+(80)	Log-like: -18470126.0	(1.2s)
+(85)	Log-like: -18470116.7	(1.3s)
+(90)	Log-like: -18470120.4	(1.2s)
+Halving mini-batches to 2.
+(95)	Log-like: -18470048.8	(1.2s)
+(100)	Log-like: -18470038.2	(1.2s)
+(105)	Log-like: -18470035.5	(1.2s)
+(110)	Log-like: -18470031.5	(1.2s)
+(115)	Log-like: -18470030.4	(1.3s)
+(120)	Log-like: -18470028.0	(1.3s)
+(125)	Log-like: -18470027.4	(1.2s)
+(130)	Log-like: -18470024.7	(1.2s)
+(135)	Log-like: -18470024.9	(1.3s)
+Running standard updates.
+(140)	Log-like: -18470013.9	(0.9s)
+(145)	Log-like: -18470011.3	(0.9s)
+(150)	Log-like: -18470010.5	(0.8s)
+(155)	Log-like: -18470010.1	(0.9s)
+(160)	Log-like: -18470009.7	(0.9s)
+(165)	Log-like: -18470009.4	(0.9s)
+(170)	Log-like: -18470009.2	(0.9s)
+(175)	Log-like: -18470008.9	(0.9s)
+(180)	Log-like: -18470008.7	(0.8s)
+(185)	Log-like: -18470008.6	(1.0s)
+(190)	Log-like: -18470008.5	(0.9s)
+(195)	Log-like: -18470008.4	(0.9s)
+(200)	Log-like: -18470008.2	(0.8s)
+(205)	Log-like: -18470008.2	(0.9s)
+(210)	Log-like: -18470008.1	(0.9s)
+(215)	Log-like: -18470008.1	(0.9s)
+(220)	Log-like: -18470008.0	(0.8s)
+(225)	Log-like: -18470008.0	(0.9s)
+(230)	Log-like: -18470008.0	(0.8s)
+(235)	Log-like: -18470007.9	(0.9s)
+(240)	Log-like: -18470007.9	(0.8s)
+(245)	Log-like: -18470007.9	(0.9s)
+Converged!
+
+Final log-likelihood: -18470007.9
+
+Performing cross-validation using 5 folds.
+Fold 1/5Fold 2/5Fold 3/5Fold 4/5Fold 5/5Fold 5/5	(17.0s)
+Cross-validation error (SD): 0.49015 (0.00074)
+
+Total elapsed time: 1m11s
+Saved Q matrix as results/admixture/chr22.K2.s2.Q
+Saved P matrix as results/admixture/chr22.K2.s2.P

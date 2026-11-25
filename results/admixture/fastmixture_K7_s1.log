@@ -1,0 +1,147 @@
+-------------------------------------------------
+fastmixture v1.3.0
+C.G. Santander, A. Refoyo-Martinez and J. Meisner
+K=7, seed=1, batches=32, threads=4
+-------------------------------------------------
+
+Reading data...Loaded 2504 samples and 8317 SNPs.
+
+WARNING: Few SNPs per mini-batch!
+
+SVD/ALS initialization.SVD/ALS initialization.		(0.7s)
+Initial log-like: -17868565.3
+Performed priming iteration.	(0.4s)
+
+Estimating Q and P using mini-batch EM.
+Using 32 mini-batches.
+(5)	Log-like: -17772218.3	(2.7s)
+(10)	Log-like: -17770422.0	(2.7s)
+(15)	Log-like: -17766154.9	(2.6s)
+(20)	Log-like: -17765658.3	(3.2s)
+(25)	Log-like: -17766652.9	(3.2s)
+Halving mini-batches to 16.
+(30)	Log-like: -17759289.8	(3.3s)
+(35)	Log-like: -17759077.0	(2.7s)
+(40)	Log-like: -17758562.4	(2.7s)
+(45)	Log-like: -17758445.1	(2.6s)
+(50)	Log-like: -17758733.3	(2.6s)
+Halving mini-batches to 8.
+(55)	Log-like: -17755891.4	(2.8s)
+(60)	Log-like: -17755560.3	(2.7s)
+(65)	Log-like: -17755503.2	(3.2s)
+(70)	Log-like: -17755516.6	(3.4s)
+Halving mini-batches to 4.
+(75)	Log-like: -17754413.6	(3.5s)
+(80)	Log-like: -17754268.1	(4.0s)
+(85)	Log-like: -17754183.9	(3.0s)
+(90)	Log-like: -17754082.4	(2.9s)
+(95)	Log-like: -17754147.4	(3.1s)
+Halving mini-batches to 2.
+(100)	Log-like: -17753785.3	(3.1s)
+(105)	Log-like: -17753735.2	(3.5s)
+(110)	Log-like: -17753711.3	(3.3s)
+(115)	Log-like: -17753690.8	(3.3s)
+(120)	Log-like: -17753664.0	(3.9s)
+(125)	Log-like: -17753651.3	(3.6s)
+(130)	Log-like: -17753636.2	(4.2s)
+(135)	Log-like: -17753619.5	(3.2s)
+(140)	Log-like: -17753618.4	(3.0s)
+(145)	Log-like: -17753600.4	(2.9s)
+(150)	Log-like: -17753594.8	(2.9s)
+(155)	Log-like: -17753587.7	(2.9s)
+(160)	Log-like: -17753580.6	(3.1s)
+(165)	Log-like: -17753579.9	(3.0s)
+(170)	Log-like: -17753572.4	(3.0s)
+(175)	Log-like: -17753574.4	(3.0s)
+Running standard updates.
+(180)	Log-like: -17753520.4	(2.2s)
+(185)	Log-like: -17753511.3	(2.2s)
+(190)	Log-like: -17753507.3	(2.3s)
+(195)	Log-like: -17753502.4	(2.1s)
+(200)	Log-like: -17753499.9	(2.2s)
+(205)	Log-like: -17753496.8	(2.2s)
+(210)	Log-like: -17753495.0	(2.2s)
+(215)	Log-like: -17753493.5	(2.3s)
+(220)	Log-like: -17753492.0	(2.2s)
+(225)	Log-like: -17753489.8	(1.9s)
+(230)	Log-like: -17753488.4	(2.0s)
+(235)	Log-like: -17753487.2	(2.0s)
+(240)	Log-like: -17753486.2	(2.0s)
+(245)	Log-like: -17753484.5	(1.9s)
+(250)	Log-like: -17753483.5	(1.9s)
+(255)	Log-like: -17753482.7	(2.0s)
+(260)	Log-like: -17753481.9	(1.9s)
+(265)	Log-like: -17753480.6	(1.8s)
+(270)	Log-like: -17753479.7	(1.9s)
+(275)	Log-like: -17753479.0	(2.0s)
+(280)	Log-like: -17753478.3	(1.8s)
+(285)	Log-like: -17753477.2	(2.2s)
+(290)	Log-like: -17753476.4	(1.9s)
+(295)	Log-like: -17753475.8	(1.9s)
+(300)	Log-like: -17753475.1	(1.9s)
+(305)	Log-like: -17753474.1	(1.8s)
+(310)	Log-like: -17753473.0	(1.9s)
+(315)	Log-like: -17753472.1	(1.8s)
+(320)	Log-like: -17753471.2	(2.0s)
+(325)	Log-like: -17753470.4	(2.0s)
+(330)	Log-like: -17753469.5	(1.8s)
+(335)	Log-like: -17753468.9	(1.9s)
+(340)	Log-like: -17753468.4	(1.9s)
+(345)	Log-like: -17753467.9	(1.9s)
+(350)	Log-like: -17753467.5	(1.8s)
+(355)	Log-like: -17753467.1	(2.0s)
+(360)	Log-like: -17753466.7	(1.9s)
+(365)	Log-like: -17753466.3	(1.8s)
+(370)	Log-like: -17753466.0	(1.9s)
+(375)	Log-like: -17753465.6	(1.9s)
+(380)	Log-like: -17753465.3	(1.9s)
+(385)	Log-like: -17753465.0	(1.9s)
+(390)	Log-like: -17753464.6	(1.9s)
+(395)	Log-like: -17753464.3	(1.8s)
+(400)	Log-like: -17753464.1	(1.9s)
+(405)	Log-like: -17753463.9	(2.0s)
+(410)	Log-like: -17753463.6	(1.8s)
+(415)	Log-like: -17753463.4	(2.0s)
+(420)	Log-like: -17753463.2	(1.8s)
+(425)	Log-like: -17753463.0	(1.9s)
+(430)	Log-like: -17753462.9	(2.0s)
+(435)	Log-like: -17753462.7	(2.1s)
+(440)	Log-like: -17753462.5	(1.9s)
+(445)	Log-like: -17753462.4	(1.9s)
+(450)	Log-like: -17753462.3	(1.9s)
+(455)	Log-like: -17753462.2	(1.8s)
+(460)	Log-like: -17753462.1	(2.0s)
+(465)	Log-like: -17753461.9	(1.9s)
+(470)	Log-like: -17753461.8	(1.8s)
+(475)	Log-like: -17753461.8	(2.0s)
+(480)	Log-like: -17753461.7	(1.8s)
+(485)	Log-like: -17753461.6	(1.9s)
+(490)	Log-like: -17753461.5	(2.0s)
+(495)	Log-like: -17753461.4	(1.8s)
+(500)	Log-like: -17753461.3	(1.8s)
+(505)	Log-like: -17753461.3	(2.0s)
+(510)	Log-like: -17753461.2	(1.9s)
+(515)	Log-like: -17753461.1	(1.8s)
+(520)	Log-like: -17753461.1	(2.0s)
+(525)	Log-like: -17753461.0	(1.8s)
+(530)	Log-like: -17753460.9	(2.4s)
+(535)	Log-like: -17753460.9	(2.0s)
+(540)	Log-like: -17753460.9	(1.8s)
+(545)	Log-like: -17753460.8	(2.0s)
+(550)	Log-like: -17753460.8	(1.9s)
+(555)	Log-like: -17753460.7	(1.8s)
+(560)	Log-like: -17753460.7	(2.4s)
+(565)	Log-like: -17753460.7	(1.9s)
+(570)	Log-like: -17753460.6	(1.8s)
+(575)	Log-like: -17753460.6	(1.9s)
+Converged!
+
+Final log-likelihood: -17753460.6
+
+Performing cross-validation using 5 folds.
+Fold 1/5Fold 2/5Fold 3/5Fold 4/5Fold 5/5Fold 5/5	(232.2s)
+Cross-validation error (SD): 0.45765 (0.00160)
+
+Total elapsed time: 8m19s
+Saved Q matrix as results/admixture/chr22.K7.s1.Q
+Saved P matrix as results/admixture/chr22.K7.s1.P

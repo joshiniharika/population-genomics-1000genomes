@@ -1,0 +1,18 @@
+fastmixture v1.3.0
+Time: 23/11/2026 12:47:06
+Directory: /mnt/c/Users/nihar/popgen_demo_git/population-genomics-1000genomes
+Options:
+	--bfile data/qc/chr22_pruned
+	--K 5
+	--threads 4
+	--seed 2
+	--out results/admixture/chr22
+	--batches 32
+	--cv 5
+
+Final log-likelihood: -17794563.2
+Cross-validation error (SD): 0.45891 (0.00064)
+Converged in 410 iterations.
+Total elapsed time: 2m59s
+Saved Q matrix as results/admixture/chr22.K5.s2.Q
+Saved P matrix as results/admixture/chr22.K5.s2.P
