@@ -1,68 +1,37 @@
 #!/bin/bash
 # =============================================================================
-# Script 04: ADMIXTURE — Ancestry Inference
+# Script 04: Ancestry inference with fastmixture
 # Author: Niharika Joshi
-# Description: Runs ADMIXTURE at K=2 to K=7 with cross-validation to
-#              identify the optimal number of ancestry components.
-#              Results are used for visualisation in R.
+# Description: Runs fastmixture (ADMIXTURE-style ancestry estimation) at
+#              K=2..7 with several seeds and 5-fold cross-validation.
+#              ADMIXTURE 1.3.0 was tried first but segfaulted on this system,
+#              so fastmixture was used instead.
 # =============================================================================
 
 set -euo pipefail
 
-# --- Configuration ---
 QC_DIR="data/qc"
-ADM_DIR="results/admixture"
+OUT_DIR="results/admixture"
 CHR=22
 K_MIN=2
 K_MAX=7
-THREADS=4   # adjust to your CPU count
+SEEDS="1 2 3"     # multiple seeds recommended by the fastmixture authors
+THREADS=4
 
-mkdir -p "$ADM_DIR"
-
-# ADMIXTURE must be run from the directory containing the BED file
-cd "$ADM_DIR"
-BED_FILE="../../$QC_DIR/chr${CHR}_pruned.bed"
-
-echo "============================================"
-echo "  ADMIXTURE Analysis (K=$K_MIN to K=$K_MAX)"
-echo "============================================"
-
-# --- Step 1: Run ADMIXTURE for each K with cross-validation ---
-echo "[1/2] Running ADMIXTURE with cross-validation..."
-echo "      This may take 10–30 minutes depending on SNP count."
-echo ""
-
-CV_ERRORS=()
+mkdir -p "$OUT_DIR"
 
 for K in $(seq $K_MIN $K_MAX); do
-    echo "  Running K=$K..."
-    admixture --cv=10 -j${THREADS} "$BED_FILE" $K | tee "admixture_K${K}.log"
-    
-    # Extract cross-validation error from log
-    CV_ERR=$(grep "CV error" "admixture_K${K}.log" | awk '{print $4}')
-    CV_ERRORS+=("K=$K: $CV_ERR")
-    echo "    CV error (K=$K): $CV_ERR"
-    echo ""
+    for SEED in $SEEDS; do
+        echo "Running K=$K, seed=$SEED..."
+        fastmixture \
+            --bfile "$QC_DIR/chr${CHR}_pruned" \
+            --K $K \
+            --threads $THREADS \
+            --seed $SEED \
+            --cv 5 \
+            --out "$OUT_DIR/chr${CHR}" \
+            2>&1 | tee "$OUT_DIR/fastmixture_K${K}_s${SEED}.log"
+    done
 done
 
-echo "  ✓ ADMIXTURE runs complete"
-
-# --- Step 2: Print cross-validation summary ---
-echo ""
-echo "[2/2] Cross-validation error summary:"
-echo "      (Lower CV error = better model fit)"
-echo ""
-for err in "${CV_ERRORS[@]}"; do
-    echo "  $err"
-done
-
-echo ""
-echo "============================================"
-echo "  Done! ADMIXTURE results saved to: $ADM_DIR"
-echo "  Files: chr${CHR}_pruned.K.Q (ancestry fractions)"
-echo "         chr${CHR}_pruned.K.P (allele frequencies)"
-echo ""
-echo "  Next: Rscript scripts/05_roh_analysis.R"
-echo "  Visualise ADMIXTURE results in R using:"
-echo "    read.table('results/admixture/chr22_pruned.5.Q')"
-echo "============================================"
+echo "Done. Q files: $OUT_DIR/chr${CHR}.K<k>.s<seed>.Q"
