@@ -49,3 +49,7 @@ po/*~
 rsconnect/
 data/*
 !data/.gitkeep
+
+# fastmixture intermediates (keep only .Q files and cv_errors.csv)
+results/admixture/*.P
+results/admixture/*.log
